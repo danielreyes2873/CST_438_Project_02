@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wishlistapp', '0001_initial'),
+        ('database', '0001_initial'),
     ]
 
     operations = [

@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+from database import views
 from django.conf.urls import include
-from wishlistapp import views
+
 
 
 urlpatterns = [

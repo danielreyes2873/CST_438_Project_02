@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wishlistapp.apps.WishlistappConfig',
-    
+    'database.apps.DatabaseConfig',
 ]
 
 MIDDLEWARE = [

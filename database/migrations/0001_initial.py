@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('itemID', models.AutoField(primary_key=True, serialize=False)),
                 ('userId', models.IntegerField()),
                 ('url', models.CharField(max_length=250)),
-                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wishlistapp.users')),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='database.users')),
             ],
         ),
     ]
