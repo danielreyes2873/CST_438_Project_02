@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import include
 from wishlistapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("<int:userID>", views.index, name="index")
+    path("<int:userID>", views.index, name="index"),
+    path('register/', include('register.urls')),
+
 ]
