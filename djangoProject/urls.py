@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# djangoProject file app is like my wishlist package file.
+# this (home) wishlist directory is like my home package file on the other project. 
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
