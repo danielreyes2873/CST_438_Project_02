@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from wishlistapp import views
+from database import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
