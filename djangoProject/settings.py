@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'register',
     'home',
     'list',
+    'login',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
