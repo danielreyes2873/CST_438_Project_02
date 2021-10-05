@@ -7,13 +7,13 @@
 </head>
 <body>
 <h1 class="jumbotron"> User Registration </h1>
-
-Username: <input type="text"><br><br>
-Password: <input type="text"><br>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+Username: <input type="text" name="username"><br><br>
+Password: <input type="text" name = "password"><br>
 <br><br>
-<input id ="submitBtn" class="btn btn-secondary" type="submit" value="Sign up!">
-
-
+<input id ="submitBtn" class="btn btn-secondary" type="submit" value="Sign up">
+</form>
 
 </body>
 </html>
