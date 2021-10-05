@@ -27,3 +27,4 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('list/', include('list.urls')),
 ]
+
