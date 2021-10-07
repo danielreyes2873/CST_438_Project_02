@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("<int:userID>", views.index, name="index"),
     path('register/', include('register.urls')),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
     path('list/', include('list.urls')),
     path('login/', include('login.urls')),
 ]
