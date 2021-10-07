@@ -14,14 +14,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from database import views
+# from database import views
 from django.conf.urls import include
 from register import views as v
 from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("<int:userID>", views.index, name="index"),
+    # path("<int:userID>", views.index, name="index"),
     path('register/', v.register, name="register"),
     path('', include('home.urls')),
     path('home/', include('home.urls')),
