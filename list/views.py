@@ -3,6 +3,12 @@ from database.models import Users, Items
 
 # Create your views here.
 def index(request):
-    firstUser = Users.objects.get(userID=1)
-    username = firstUser.username
-    return render(request,"list/list.html", {"username":username})
+    users = Users.objects.all()
+
+    items = Items.objects.all()
+    return render(request,"list/list.html", {"items":items})
+
+def viewItem(request, id):
+    item = Items.objects.get(itemID=id)
+
+    return render(request,"viewItem/item.html", {"item":item})

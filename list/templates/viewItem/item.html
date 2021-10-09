@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <title> Wishlist </title>
+    <title> Specific Item </title>
 </head>
 <body>
-    <header>
+  <header>
         <h1 class="jumbotron" style="text-align:center;"> Wishful
             <br>
             <a class="navbar-brand" href="home.html"> Home </a>
@@ -24,24 +24,12 @@
     </header>
     <br>
 
-    <div style="text-align:center;">
-        <h4> Add an item to your wishlist: </h4>
-        <input id="search" class = "guessField" type = "text" size = "25" placeholder = "Search items" style="text-align:center;">
-        <button id="searchBtn" type="button" class="btn btn-info"> search </button>
-    </div>
-
-    <!-- the list of items -->
+    <!-- item -->
+  <h1>You are on the viewItem page</h1>
     <div>
         {% block content %}
-            <ul>
-                {% for item in items %}
-                    <li>{{item.url}}</li>
-                    <li>{{item.ID}}</li>
-                    <a class="item-link"href="viewitem.html">View Item?</a>
-                {% endfor %}
-            </ul>
-        {% endblock %}
+        <p>{{item.itemID}}</p>
+        <p>{{item.url}}</p>
     </div>
-
 </body>
 </html>
