@@ -30,4 +30,6 @@ urlpatterns = [
     # path('login/', include('login.urls')),
     path('', include("django.contrib.auth.urls")),
     path('profile/', include('login.urls')),
+    path('editItem/', include('editItem.urls')),
+    path('userWList/', include('userWList.urls')),
 ]
