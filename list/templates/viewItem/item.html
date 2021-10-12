@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title> Specific Item </title>
+</head>
+<body>
+  <header>
+        <h1 class="jumbotron" style="text-align:center;"> Wishful
+            <br>
+            <a class="navbar-brand" href="home.html"> Home </a>
+            <a class="navbar-brand" href="wishlist.html"> Wishlist </a>
+            <a class="navbar-brand" href="profile.html"> Profile </a>
+            <a class="navbar-brand" href="login.html"> Login </a>
+            <a class="navbar-brand" href="register.html"> Sign Up </a>
+        </h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <h3>
+                <a style="text-align:center;" class="navbar-brand" href="list.html"> Search Wishlist </a>
+                <a style="text-align:center;" class="navbar-brand" href="temp.html"> My Wishlists </a>
+            </h3>
+        </nav>
+    </header>
+    <br>
+
+    <!-- item -->
+  <h1>You are on the viewItem page</h1>
+    <div>
+        {% block content %}
+        <p>{{item.itemID}}</p>
+        <p>{{item.url}}</p>
+    </div>
+</body>
+</html>
