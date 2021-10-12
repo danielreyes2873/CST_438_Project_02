@@ -9,7 +9,9 @@
 <body>
 <h1 class="jumbotron"> Login </h1>
     {% if user.is_authenticated %}
-        <h1>Here is your content, {{user.get_username}}</h1>
+       Username: <input type="text"><br><br>
+       Password: <input type="text"><br>
+<button> <a href="/login">Edit </a> </button>
     {% else %}
         <p>Login <a href="/login">Here</a></p>
     {% endif %}
