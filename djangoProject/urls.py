@@ -33,4 +33,5 @@ urlpatterns = [
     path('profile/', include('login.urls')),
     path('editItem/', include('editItem.urls')),
     path('userWList/', include('userWList.urls')),
+    path('api/', include('apiapp.urls')),
 ]
