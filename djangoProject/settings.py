@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'database.apps.DatabaseConfig',
     'register.apps.RegisterConfig',
     'crispy_forms',
+    'apiapp.apps.ApiappConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
