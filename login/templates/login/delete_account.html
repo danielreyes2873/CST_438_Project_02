@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title>Delete Account</title>
+    {% load crispy_forms_tags %}
+</head>
+<body>
+<h1 class="jumbotron"> Delete Account </h1>
+    {% if user.is_authenticated %}
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            <h1>Are you sure you want to delete your account?</h1>
+            <input type="hidden" name="userID" value="{{user.id}}">
+            <button type="submit" class="btn btn-success">Confirm</button>
+        </form>
+
+    {% else %}
+        <p>Login <a href="/login">Here</a></p>
+    {% endif %}
+
+    {{context}}
+
+</body>
+
+</html>

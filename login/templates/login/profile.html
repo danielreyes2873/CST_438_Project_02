@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <title>Login</title>
+    <title>Profile</title>
     {% load crispy_forms_tags %}
 </head>
 <body>
-<h1 class="jumbotron"> Login </h1>
+<h1 class="jumbotron"> Profile </h1>
     {% if user.is_authenticated %}
         <h1>Here is your content, {{user.get_username}}</h1>
+<footer class="page-footer font-small blue pt-4" style="position: absolute; bottom: 0">
+    <div class="container-fluid text-center text-md-left">
+        <a href="delete_account"> Delete Account</a>
+    </div>
+</footer>
     {% else %}
         <p>Login <a href="/login">Here</a></p>
     {% endif %}
 
 </body>
+
 </html>
