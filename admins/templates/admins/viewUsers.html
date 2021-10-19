@@ -6,9 +6,29 @@
     <title> Admin View Users</title>
 </head>
 <body>
-    View all users
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" style="font-size:25px"> Wishful </a>
+            <img src="https://randems.lk/wp-content/uploads/2020/05/wish-list-Small.png" width="30" height="30" alt="">
+            <a class="navbar-brand" href="/"> &nbsp; &nbsp; Home </a>
+            <a class="navbar-brand" href="/list"> Wishlist </a>
+            <a class="navbar-brand" href="/profile"> Profile </a>
+            <a class="navbar-brand" href="/login"> Login </a>
+            <a class="navbar-brand" href="/register"> Sign Up </a>
+        </nav>
+    </header>
 
-
-
+    <div style="text-align:center;">
+        <h4> All User Accounts </h4>
+    </div>
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+        {% block content %}
+            <ul>
+                {% for i in users %}
+                    <li> {{i.id}} : {{i.username}}</li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </div>
 </body>
 </html>
