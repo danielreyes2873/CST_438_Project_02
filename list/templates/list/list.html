@@ -29,5 +29,16 @@
         <input id="search" class = "guessField" type = "text" size = "25" placeholder = "Search items" style="text-align:center;">
         <button id="searchBtn" type="button" class="btn btn-info"> search </button>
     </div>
+
+    <!-- Displays all items -->
+{% block content %}
+    <ul>
+        {% for item in items %}
+            <li>{{item.name}}</li>
+            <a href="/viewItem">View Item</a>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
 </body>
 </html>
