@@ -37,5 +37,6 @@ urlpatterns = [
     path('editItem/', include('editItem.urls')),
     path('userWList/', include('userWList.urls')),
     path('api/', include('apiapp.urls')),
+    path('profile/delete_account/', include('login.urls')),
     path('makeItem/', include('makeItem.urls')),
 ]
