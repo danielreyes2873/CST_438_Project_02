@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <title> Wishlist </title>
+    <title> Admin View Users</title>
 </head>
 <body>
     <header>
@@ -18,27 +18,17 @@
         </nav>
     </header>
 
-    <br>
-
     <div style="text-align:center;">
-        <h2 class="card">
-            <a style="text-align:center;" class="navbar-brand" href="/userWList"> My Wishlists </a>
-        </h2>
-        <br>
-        <h4> Add an item to your wishlist: </h4>
-        <input id="search" class = "guessField" type = "text" size = "25" placeholder = "Search items" style="text-align:center;">
-        <button id="searchBtn" type="button" class="btn btn-info"> search </button>
+        <h4> All User Accounts </h4>
     </div>
-
-    <!-- Displays all items -->
-{% block content %}
-    <ul>
-        {% for item in items %}
-            <li>{{item.name}}</li>
-            <a href="/viewItem">View Item</a>
-        {% endfor %}
-    </ul>
-{% endblock %}
-
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+        {% block content %}
+            <ul>
+                {% for i in users %}
+                    <li> {{i.id}} : {{i.username}}</li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </div>
 </body>
 </html>

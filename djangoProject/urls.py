@@ -22,6 +22,9 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admins/', include('admins.urls')),
+    path('admins/viewUsers', include('admins.urls')),
+    path('admins/createUserInfo', include('admins.urls')),
+    path('admins/updaterUserInfo', include('admins.urls')),
     # path('createUserInfo/', include('admins.urls')),
     # path("<int:userID>", views.index, name="index"),
     path('register/', v.register, name="register"),
