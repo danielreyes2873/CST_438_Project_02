@@ -34,8 +34,7 @@
 {% block content %}
     <ul>
         {% for item in items %}
-            <li>{{item.id}}</li>
-            <li>{{item.userId}}</li>
+            <li>{{item.name}}</li>
             <a href="/viewItem">View Item</a>
         {% endfor %}
     </ul>
