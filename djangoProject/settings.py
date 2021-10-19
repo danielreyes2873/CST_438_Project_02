@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'admins',
     'editItem',
     'userWList',
+    'makeItem',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

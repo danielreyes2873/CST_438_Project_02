@@ -7,3 +7,7 @@ from django.contrib.auth.models import User
 def index(request):
     items = Item.objects.all()
     return render(request,"list/list.html", {"items":items})
+
+def viewItem(request, id):
+    item = Item.objects.get(id)
+    return render(request, "list/viewItem.html", {"item": item})
