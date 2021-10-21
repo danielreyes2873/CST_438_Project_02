@@ -8,6 +8,6 @@ def index(request):
     items = Item.objects.all()
     return render(request,"list/list.html", {"items":items})
 
-def viewItem(request, id):
-    item = Item.objects.get(id)
-    return render(request, "list/viewItem.html", {"item": item})
+def viewItem(request, name):
+    item = Item.objects.get(name=name)
+    return render(request, "list/viewItem.html", {"item":item})

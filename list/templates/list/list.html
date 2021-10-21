@@ -44,7 +44,7 @@
     <ul>
         {% for item in items %}
             <li>{{item.name}}</li>
-            <a href="/viewItem">View Item</a>
+            <a href="/list/viewItem/{{item.name}}">View Item</a>
         {% endfor %}
     </ul>
 {% endblock %}
