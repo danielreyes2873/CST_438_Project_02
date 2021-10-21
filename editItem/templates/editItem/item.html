@@ -22,17 +22,18 @@
       <div class="card" style="text-align:center">
            <h3  style="color:#5C767E"> Edit Items </h3>
       </div>
-
-      <div>
-          <button> Edit url </button>
-          <button> Edit image </button>
-          <button> Edit description </button>
-          <button> Edit priority </button>
-      </div>
-
-
-
-
+      <br>
+    <div class="card-body">
+        <form action='Edit' method="POST" class="form-group">
+            {% csrf_token %}
+            {{form}}
+            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit url"> <br> <br>
+            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit image url"> <br> <br>
+            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit priority"> <br> <br>
+            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit description"> <br> <br>
+            <input id ="submitBtn" class="btn btn-secondary" type="submit" value="Edit Item">
+        </form>
+    </div>
 
 
 </body>
