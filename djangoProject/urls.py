@@ -1,5 +1,4 @@
 """djangoProject URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -15,16 +14,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from database import views
+# from database import views
 from django.conf.urls import include
-
-
+from register import views as v
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("<int:userID>", views.index, name="index"),
-    path('register/', include('register.urls')),
+    path('admins/', include('admins.urls')),
+    path('admins/viewUsers', include('admins.urls')),
+    path('admins/createUserInfo', include('admins.urls')),
+    path('admins/updaterUserInfo', include('admins.urls')),
+    # path('createUserInfo/', include('admins.urls')),
+    # path("<int:userID>", views.index, name="index"),
+    path('register/', v.register, name="register"),
+    path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('list/', include('list.urls')),
+    # path('login/', include('login.urls')),
+    path('', include("django.contrib.auth.urls")),
+    path('profile/', include('login.urls')),
+    path('editItem/', include('editItem.urls')),
+    path('userWList/', include('userWList.urls')),
+    path('api/', include('apiapp.urls')),
+    path('profile/delete_account/', include('login.urls')),
+    path('makeItem/', include('makeItem.urls')),
 ]

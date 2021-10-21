@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title> Admin View Users</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" style="font-size:25px"> Wishful </a>
+            <img src="https://randems.lk/wp-content/uploads/2020/05/wish-list-Small.png" width="30" height="30" alt="">
+            <a class="navbar-brand" href="/"> &nbsp; &nbsp; Home </a>
+            <a class="navbar-brand" href="/list"> Wishlist </a>
+            <a class="navbar-brand" href="/profile"> Profile </a>
+        {% if not user.is_authenticated %}
+            <a class="navbar-brand" href="/login"> Login </a>
+        {% endif %}
+        {% if user.is_authenticated and user.id == 1 %}
+            <a class="navbar-brand" href="/admins"> Admin </a>
+        {% elif not user.is_authenticated %}
+            <a class="navbar-brand" href="/register"> Sign Up </a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" href="/logout">Logout</a>
+        {% endif %}
+        </nav>
+    </header>
+
+    <div style="text-align:center;">
+        <h4> All User Accounts </h4>
+    </div>
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+        {% block content %}
+            <ul>
+                {% for i in users %}
+                <li> <h4 style="margin: 0 auto">{{i.id}} : {{i.username}}</h4>
+                    <form method="POST" class="form-group">
+                    {% csrf_token %}
+                    <input type="hidden" name="userID" value="{{i.id}}">
+                    <button type="submit" onclick="return confirm('Delete {{i.username}}?')" class="btn btn-secondary" style="margin: 0 auto">delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </div>
+    {{context}}
+</body>
+</html>
+<!--<a href="adminDelete/"> delete </a>-->
