@@ -31,6 +31,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('list/', include('list.urls')),
+    path('list/viewItem/<slug:name>', include('list.urls')),
     # path('login/', include('login.urls')),
     path('', include("django.contrib.auth.urls")),
     path('profile/', include('login.urls')),

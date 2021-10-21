@@ -1,21 +1,21 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
+from apiapp.models import Item
 from .forms import CreateItemForm
 
 def index(request):
-    # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = CreateItemForm(request.POST)
-        # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('home/home.html')
+            name = form.cleaned_data['name']
+            price = form.cleaned_data['price']
+            url = form.cleaned_data['url']
+            urlImage = form.cleaned_data['urlimage']
 
-    # if a GET (or any other method) we'll create a blank form
+            item = Item(name=name, price=price, url=url, imageUrl=urlImage)
+            item.save()
+            return HttpResponseRedirect('/')
     else:
         form = CreateItemForm()
 

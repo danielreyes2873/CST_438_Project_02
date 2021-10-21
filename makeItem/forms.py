@@ -5,4 +5,3 @@ class CreateItemForm(forms.Form):
     price = forms.CharField(label='price', max_length=20)
     url = forms.CharField(label='url', max_length=300)
     urlimage = forms.CharField(label='urlImage', max_length=300)
-    description = forms.CharField(label='description', max_length=500)
