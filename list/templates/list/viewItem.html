@@ -5,11 +5,41 @@
     <title>View Item</title>
 </head>
 <body>
-    <header> <h1>{{item.name}} </h1> </header>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" style="font-size:25px"> Wishful </a>
+            <img src="https://randems.lk/wp-content/uploads/2020/05/wish-list-Small.png" width="30" height="30" alt="">
+            <a class="navbar-brand" href="/"> &nbsp; &nbsp; Home </a>
+            <a class="navbar-brand" href="/list"> Wishlist </a>
+            <a class="navbar-brand" href="/profile"> Profile </a>
+        {% if not user.is_authenticated %}
+            <a class="navbar-brand" href="/login"> Login </a>
+        {% endif %}
+        {% if user.is_authenticated and user.username == "admin" %}
+            <a class="navbar-brand" href="/admins"> Admin </a>
+        {% elif not user.is_authenticated %}
+            <a class="navbar-brand" href="/register"> Sign Up </a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" href="/logout">Logout</a>
+        {% endif %}
+        </nav>
+      <h1>{{item.name}}</h1>
+    </header>
 
     <p>{{item.url}}</p>
-    <p>{{item.imageUrl}}</p>
+    <img src="{{item.imageUrl}}" style="width:900px;height=800px">{{item.imageUrl}}</img>
     <p>{{item.price}}</p>
+    <p>{{item.description}}</p>
 
+    <!--form with post method to move Item object to an Items object -->
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        <span>Quantity: </span><input type="text" name="quantity" placeholder="Enter Quantity">
+        <span>Priority: </span><input type="text" name="priority" placeholder="Enter Priority">
+        <input type="hidden" name="itemId" value="{{item.id}}">
+        <input type="hidden" name="userID" value="{{user.id}}">
+        <button type="submit" class="btn btn-success">Add item to Wishlist</button>
+    </form>
 </body>
 </html>

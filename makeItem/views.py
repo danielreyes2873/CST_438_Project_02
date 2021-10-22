@@ -12,8 +12,9 @@ def index(request):
             price = form.cleaned_data['price']
             url = form.cleaned_data['url']
             urlImage = form.cleaned_data['urlimage']
+            description = form.cleaned_data['description']
 
-            item = Item(name=name, price=price, url=url, imageUrl=urlImage)
+            item = Item(name=name, price=price, url=url, imageUrl=urlImage, description=description)
             item.save()
             return HttpResponseRedirect('/')
     else:
