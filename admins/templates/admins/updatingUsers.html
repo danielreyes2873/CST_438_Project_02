@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+Username: <input type="text" name="username" value="{{u.username}}">
+Password: <input type="text" name="password" placeholder="Enter password">
+
+<input type="hidden" name="ID" value="{{u.id}}">
+<button name="submitUpdateUser">Update</button>
+</form>
+
+</body>
+</html>
