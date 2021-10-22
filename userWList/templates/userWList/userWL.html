@@ -13,8 +13,17 @@
             <a class="navbar-brand" href="/"> &nbsp; &nbsp; Home </a>
             <a class="navbar-brand" href="/list"> Wishlist </a>
             <a class="navbar-brand" href="/profile"> Profile </a>
+        {% if not user.is_authenticated %}
             <a class="navbar-brand" href="/login"> Login </a>
+        {% endif %}
+        {% if user.is_authenticated and user.username == "admin" %}
+            <a class="navbar-brand" href="/admins"> Admin </a>
+        {% elif not user.is_authenticated %}
             <a class="navbar-brand" href="/register"> Sign Up </a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" href="/logout">Logout</a>
+        {% endif %}
         </nav>
     </header>
 
