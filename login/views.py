@@ -5,7 +5,17 @@ import logging
 
 
 def profile(request):
+    if request.method == "POST":
+        if request.POST.get('ID'):
+            u = User.objects.get(id=request.POST.get('ID'))
+            if request.POST.get('username'):
+                u.username = request.POST.get('username')
+            if request.POST.get('password'):
+                u.set_password(request.POST.get('password'))
+            u.save()
+            return redirect("/login")
     return render(request, "login/profile.html")
+
 
 
 def delete_account(request):
