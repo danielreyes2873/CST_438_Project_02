@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <title>View Item</title>
 </head>
 <body>
@@ -26,11 +27,13 @@
         </nav>
       <h1>{{item.name}}</h1>
     </header>
-
-    <p>{{item.url}}</p>
-    <img src="{{item.imageUrl}}" style="width:900px;height=800px">{{item.imageUrl}}</img>
-    <p>{{item.price}}</p>
-    <p>{{item.description}}</p>
+  
+    <div class="card-body" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+        <h4><a href="{{item.url}}"> Item link </a></h4>
+        <br>
+        <img src="{{item.imageUrl}}" width="400" height="500"> <br>
+        <p> Price: {{item.price}}</p>
+    </div>
 
     <!--form with post method to move Item object to an Items object -->
     <form method="POST" class="form-group">

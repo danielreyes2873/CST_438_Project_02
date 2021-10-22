@@ -32,21 +32,22 @@
            <h3  style="color:#5C767E"> Edit Items </h3>
       </div>
       <br>
-    <div class="card-body">
-        <form action='Edit' method="POST" class="form-group">
-            {% csrf_token %}
-            {{form}}
-            <span> Item Url: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.url}}"> <br> <br>
-            <span> Item ImageUrl: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.imageUrl}}"> <br> <br>
-            <span> Item Priority: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.priority}}"> <br> <br>
-            <span> Item Description: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.description}}"> <br> <br>
-            <input id ="submitBtn" class="btn btn-secondary" type="submit" value="Edit Item">
-        </form>
 
-        <!--Delete item -->
-        <a href="{%'editItem/removeItem' item.id ">Delete Item</a>
-    </div>
+      <div class="card-body">
+         <h4>  Item: {{item.name}} </h4> <br>
+          <form method="POST" class="form-group">
+              {% csrf_token %}
 
+              Edit url: <input type="text" name="url" value="{{item.url}}"> <br> <br>
+              Edit image url: <input type="text" name="imgUrl" value="{{item.imageUrl}}"> <br> <br>
+              Edit price: <input type="text" name="price" value="{{item.price}}"> <br> <br>
+              Edit description: <input type="text" name="description" value="{{item.description}}"> <br> <br>
+
+              <input type="hidden" name="ID" value="{{item.id}}">
+              <button type="submit" name="updateItem"> Update</button>
+
+          </form>
+      </div>
 
 </body>
 </html>

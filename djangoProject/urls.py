@@ -38,6 +38,8 @@ urlpatterns = [
     # path('login/', include('login.urls')),
     path('', include("django.contrib.auth.urls")),
     path('profile/', include('login.urls')),
+    path('editItem/', include('editItem.urls')),
+    path('editItem/item',include('editItem.urls')),
     path('profile/delete_account/', include('login.urls')),
     path('editItem/<int:id>', include('editItem.urls')),
     path('editItem/removeItem/<int:id>', include('editItem.urls')),
