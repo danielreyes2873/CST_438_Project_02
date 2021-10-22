@@ -16,7 +16,7 @@
         {% if not user.is_authenticated %}
             <a class="navbar-brand" href="/login"> Login </a>
         {% endif %}
-        {% if user.is_authenticated and user.id == 1 %}
+        {% if user.is_authenticated and user.username == "admin" %}
             <a class="navbar-brand" href="/admins"> Admin </a>
         {% elif not user.is_authenticated %}
             <a class="navbar-brand" href="/register"> Sign Up </a>
@@ -34,13 +34,17 @@
         {% block content %}
             <ul>
                 {% for i in users %}
-                <li> <h4 style="margin: 0 auto">{{i.id}} : {{i.username}}</h4>
-                    <form method="POST" class="form-group">
-                    {% csrf_token %}
-                    <input type="hidden" name="userID" value="{{i.id}}">
-                    <button type="submit" onclick="return confirm('Delete {{i.username}}?')" class="btn btn-secondary" style="margin: 0 auto">delete</button>
-                    </form>
-                </li>
+                    {% if i.username == "admin" %}
+                        <!-- continue -->
+                    {% else %}
+                        <li> <h4 style="margin: 0 auto">{{i.id}} : {{i.username}}</h4>
+                            <form method="POST" class="form-group">
+                            {% csrf_token %}
+                            <input type="hidden" name="userID" value="{{i.id}}">
+                            <button type="submit" onclick="return confirm('Delete {{i.username}}?')" class="btn btn-secondary" style="margin: 0 auto">delete</button>
+                        </form>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         {% endblock %}
