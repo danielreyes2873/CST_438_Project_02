@@ -42,7 +42,8 @@
     <ul>
         {% for item in items %}
             <li>{{item.name}}</li>
-            <a href="/list/viewItem/{{item.name}}">View Item</a>
+            <a href="/list/viewItem/{{item.name}}">View Item</a> <br>
+            <a href="/editItem/item/{{item.name}}">Edit Item</a>
         {% endfor %}
     </ul>
 {% endblock %}

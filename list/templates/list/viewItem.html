@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <title>View Item</title>
 </head>
 <body>
-    <header> <h1>{{item.name}} </h1> </header>
 
-    <p>{{item.url}}</p>
-    <p>{{item.imageUrl}}</p>
-    <p>{{item.price}}</p>
+    <header>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" style="font-size:25px" > Item: {{item.name}} </a>
+            <img src="https://randems.lk/wp-content/uploads/2020/05/wish-list-Small.png" width="30" height="30" alt="">
+         </nav>
+    </header>
+    <br><br>
+    <div class="card-body" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+        <h4><a href="{{item.url}}"> Item link </a></h4>
+        <br>
+        <img src="{{item.imageUrl}}" width="400" height="500"> <br>
+        <p> Price: {{item.price}}</p>
+    </div>
+
 
 </body>
 </html>
