@@ -36,12 +36,15 @@
         <form action='Edit' method="POST" class="form-group">
             {% csrf_token %}
             {{form}}
-            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit url"> <br> <br>
-            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit image url"> <br> <br>
-            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit priority"> <br> <br>
-            <input id="search" class = "guessField" type = "text" size = "25" placeholder="Edit description"> <br> <br>
+            <span> Item Url: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.url}}"> <br> <br>
+            <span> Item ImageUrl: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.imageUrl}}"> <br> <br>
+            <span> Item Priority: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.priority}}"> <br> <br>
+            <span> Item Description: </span><input class="search" class = "guessField" type = "text" size = "25" placeholder="{{item.description}}"> <br> <br>
             <input id ="submitBtn" class="btn btn-secondary" type="submit" value="Edit Item">
         </form>
+
+        <!--Delete item -->
+        <a href="{%'editItem/removeItem' item.id ">Delete Item</a>
     </div>
 
 
