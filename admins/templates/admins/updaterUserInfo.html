@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <title>Login</title>
+    <title>update users </title>
+
 </head>
 <body>
-<h1 class="jumbotron">update users  </h1>
 
-Username: <input type="text"><br><br>
-Password: <input type="text"><br>
-<br><br>
-<button>Update</button>
+
+<div style="text-align:center;">
+<h1 class="jumbotron">Update users  </h1>
+</div>
+
+        {% block content %}
+            <ul>
+                {% for i in users %}
+                <li> <h1 style="margin: 0 auto">{{i.username}}  </h1> </li>
+                <form method="POST" class="form-group" >
+                   {% csrf_token %}
+                    <input type="hidden" name="userID" value="{{i.id}}">
+                    <button type="submit" onclick="return confirm('Update {{i.username}}?')" class="btn btn-secondary" style="margin: 0 auto">Update</button>
+                </form>
+                </li>
+
+                {% endfor %}
+            </ul>
+        {% endblock %}
+
 
 </body>
 </html>
