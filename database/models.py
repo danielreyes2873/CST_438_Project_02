@@ -11,6 +11,7 @@ class Items(models.Model):
     url = models.CharField(max_length=250)
     imageUrl = models.CharField(max_length=250, default="image")
     price = models.IntegerField(default=0)
+    description = models.CharField(max_length=250, default="description")
     quantity = models.IntegerField(default=0)
     priority = models.IntegerField(default=0)
 
