@@ -7,20 +7,20 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, "editItem/item.html")
 
-def index2(request,name):
-    item = Item.objects.get(name=name)
+def index2(request,id):
+    item = Item.objects.get(id=id)
 
     if request.method == "POST":
         if request.POST.get('ID'):
-            id = Item.objects.get(id=request.POST.get('ID'))
+            i = Item.objects.get(id=request.POST.get('ID'))
             if request.POST.get('url'):
-                id.url = request.POST.get('url')
+                i.url = request.POST.get('url')
             if request.POST.get('imgUrl'):
-                id.imageUrl = request.POST.get('imgUrl')
+                i.imageUrl = request.POST.get('imgUrl')
             if request.POST.get('price'):
-                id.price = request.POST.get('price')
+                i.price = request.POST.get('price')
             if request.POST.get('description'):
-                id.description = request.POST.get('description')
-            id.save()
+                i.description = request.POST.get('description')
+            i.save()
             return redirect("/list")
     return render(request, "editItem/item.html",{"item":item})
