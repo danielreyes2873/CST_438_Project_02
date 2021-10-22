@@ -1,3 +1,4 @@
+
 from django.shortcuts import render,redirect
 from database.models import Items
 from apiapp.models import Item #all items
@@ -23,12 +24,3 @@ def index2(request,name):
             id.save()
             return redirect("/list")
     return render(request, "editItem/item.html",{"item":item})
-
-
-
-
-
-
-
-
-

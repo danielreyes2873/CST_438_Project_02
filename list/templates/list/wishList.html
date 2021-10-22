@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <title> MasterList </title>
+    <title>WishList</title>
 </head>
 <body>
     <header>
@@ -29,23 +28,18 @@
 
     <br>
 
-    <div style="text-align:center;">
-        <h2 class="card">
-            <nav>
-                <a style="text-align:center;" class="navbar-brand" href="/makeItem"> Make new item </a>
-                <a style="text-align:center;" class="navbar-brand" href="/list/wishList/{{user.id}}"> Your Wishlist </a>
-            </nav>
-         </h2>
-    </div>
-
-    <!-- Displays all items -->
 {% block content %}
     <ul>
         {% for item in items %}
-            <li>{{item.name}}</li>
-            <a href="/list/viewItem/{{item.name}}">View Item</a> <br>
-            <a href="/editItem/item/{{item.name}}">Edit Item</a>
-            <a href="/list/viewItem/{{item.id}}">View Item</a>
+            <div>
+                <p>{{item.name}}</p>
+                <p>{{item.url}}</p>
+                <p>{{item.imageUrl}}</p>
+                <p>Price: {{item.price}}</p><span> Quantity: {{item.quantity}}</span>
+                <p>{{item.description}}</p>
+                <p>Priority: {{item.priority}}</p>
+            </div>
+        <br>
         {% endfor %}
     </ul>
 {% endblock %}
