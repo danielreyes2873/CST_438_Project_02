@@ -11,9 +11,11 @@
     {% if user.is_authenticated %}
         <form method="POST" class="form-group">
             {% csrf_token %}
-            <h1>Are you sure you want to delete your account?</h1>
+            <h2>Are you sure you want to delete your account?</h2>
+            Enter Password: <input type="password" name="password">
             <input type="hidden" name="userID" value="{{user.id}}">
-            <button type="submit" class="btn btn-success">Confirm</button>
+            <button type="submit" class="btn btn-success">Confirm</button><br>
+            <h5 style="color: red">{{msg}}</h5>
         </form>
 
     {% else %}

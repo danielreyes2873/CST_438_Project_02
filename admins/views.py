@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from database.models import Items
 
 
 # Create your views here.
@@ -11,12 +12,14 @@ def index(request):
 
 def index2(request):
     user = User.objects.all()
-    context = {}
     if request.method == "POST":
         if request.POST.get('userID'):
             u = User.objects.get(id=request.POST.get('userID'))
             u.delete()
-            context['msg'] = 'The user is deleted.'
+            item = Items.objects.all()
+            for i in item:
+                if i.userId == u.id:
+                    i.delete()
             return render(request, "admins/viewUsers.html", {"users": user})
 
     return render(request, "admins/viewUsers.html", {"users": user})
