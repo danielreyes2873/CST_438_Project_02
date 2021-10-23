@@ -34,6 +34,7 @@ urlpatterns = [
     path('list/', include('list.urls')),
     path('list/viewItem/<int:id>', include('list.urls')),
     path('list/wishList/<int:id>', include('list.urls')),
+    path('list/wishList/None', include('list.urls')),
     path('list/viewItem/addtoWishList/', include('list.urls')),
     # path('login/', include('login.urls')),
     path('', include("django.contrib.auth.urls")),
