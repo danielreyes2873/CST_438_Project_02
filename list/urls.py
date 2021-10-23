@@ -6,4 +6,5 @@ urlpatterns= [
     path('', views.index, name='index'),
     path('viewItem/<int:id>', views.viewItem, name='viewItem'),
     path('wishList/<int:id>', views.wishList, name='wishList'),
+    path('wishList/None', views.wishListNone, name='wishListNone'),
 ]

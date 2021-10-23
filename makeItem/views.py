@@ -4,6 +4,7 @@ from django.shortcuts import render
 from apiapp.models import Item
 from .forms import CreateItemForm
 
+
 def index(request):
     if request.method == 'POST':
         form = CreateItemForm(request.POST)
@@ -16,7 +17,7 @@ def index(request):
 
             item = Item(name=name, price=price, url=url, imageUrl=urlImage, description=description)
             item.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/list')
     else:
         form = CreateItemForm()
 
